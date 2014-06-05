@@ -6,4 +6,4 @@ dcomp <- rbind(d1, d2); dcomp <-data.frame(dcomp)  ##put together both, 1/2/2007
 v1<-as.numeric(as.vector(dcomp$Global_active_power))  ##subset the variable "Global Active Power" from the data frame 
 png(file="plot2.png", width = 480, height = 480, units = "px")  ##open de device of PNG format
 plot(v1, type = "l", ylab="Global Active Power (kilowatts)") ##build a plot type lines
-dev.off() #"close de png device
+dev.off() ##close de png device
