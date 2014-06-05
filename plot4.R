@@ -10,22 +10,22 @@ sm1<-as.numeric(as.vector(dcomp$Sub_metering_1))  ##subset the variable "Sub met
 sm2<-as.numeric(as.vector(dcomp$Sub_metering_2))  ##subset the variable "Sub metering 2" from the data frame
 sm3<-as.numeric(as.vector(dcomp$Sub_metering_3))  ##subset the variable "Sub metering 3" from the data frame
 png(file="plot4.png", width = 480, height = 480, units = "px")  ##open de device of PNG format 
-par(mfrow = c(2, 2))
-plot(v1, pch= ".", ylab="Global Active Power", xaxt = "n", xlab='')
-lines(v1)
-axis(1, at=1, labels= "Thu"); axis(1, at=1440, labels= "Fri"); axis(1, at=2880, labels= "Sat")
-plot(v2, pch= ".", ylab="Voltage", xaxt = "n", xlab='datetime')
-lines(v2)
-axis(1, at=1, labels= "Thu"); axis(1, at=1440, labels= "Fri"); axis(1, at=2880, labels= "Sat")
-plot(sm1, pch= ".", ylab="Energy sub metering", xaxt = "n", xlab='')
-lines(sm1)
-points(sm2, col="red", pch=".")
-lines(sm2, col="red")
-points(sm3, col="blue", pch=".")
-lines(sm3, col="blue")
-axis(1, at=1, labels= "Thu"); axis(1, at=1440, labels= "Fri"); axis(1, at=2880, labels= "Sat")
-legend("topright", lty= 1, bty="n", col=c("black","red", "blue"), legend= c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"))
-plot(v3, pch= ".", ylab="Global_reactive_power", xaxt = "n", xlab='datetime')
-lines(v3)
-axis(1, at=1, labels= "Thu"); axis(1, at=1440, labels= "Fri"); axis(1, at=2880, labels= "Sat")
+par(mfrow = c(2, 2)) ##configure the devices to have two columns and two rows for plots
+plot(v1, pch= ".", ylab="Global Active Power", xaxt = "n", xlab='') ##build the plot number 1
+lines(v1) ##add the lines
+axis(1, at=1, labels= "Thu"); axis(1, at=1440, labels= "Fri"); axis(1, at=2880, labels= "Sat") ##put the labels in the axis X
+plot(v2, pch= ".", ylab="Voltage", xaxt = "n", xlab='datetime') ##build the plot number 2
+lines(v2) ##add the lines
+axis(1, at=1, labels= "Thu"); axis(1, at=1440, labels= "Fri"); axis(1, at=2880, labels= "Sat") ##put the labels in the axis X
+plot(sm1, pch= ".", ylab="Energy sub metering", xaxt = "n", xlab='') ##build the plot number 3
+lines(sm1) ##add the lines
+points(sm2, col="red", pch=".") ##add the points
+lines(sm2, col="red") ##add the lines
+points(sm3, col="blue", pch=".") ##add the points
+lines(sm3, col="blue") ##add the lines
+axis(1, at=1, labels= "Thu"); axis(1, at=1440, labels= "Fri"); axis(1, at=2880, labels= "Sat") ##put the labels in the axis X
+legend("topright", lty= 1, bty="n", col=c("black","red", "blue"), legend= c("Sub_metering_1","Sub_metering_2", "Sub_metering_3")) ##Put the corresponding legend on the plot
+plot(v3, pch= ".", ylab="Global_reactive_power", xaxt = "n", xlab='datetime') ##build the plot number 4
+lines(v3) ##add the lines
+axis(1, at=1, labels= "Thu"); axis(1, at=1440, labels= "Fri"); axis(1, at=2880, labels= "Sat") ##put the labels in the axis X
 dev.off() ##close de png device
